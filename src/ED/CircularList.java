@@ -9,7 +9,8 @@ package ED;
  *
  * @author Mariana Villegas
  */
-public class CircularList <T> {
+public class CircularList<T> {
+
     SimpleNode pivot;
 
     public CircularList() {
@@ -23,10 +24,6 @@ public class CircularList <T> {
             node.next = pivot;
             findLast().next = node;
             pivot = node;
-            /* while(pivot.next != null){
-             pivot = pivot.next;
-         }
-         pivot.next = node;*/
 
         } else {
             pivot = node;
@@ -47,13 +44,13 @@ public class CircularList <T> {
     }
 
     public void showList() {
-SimpleNode aux;//declaramos dos variables auxiliares tipo nodeDL para guardar los valores de nuestros nodos
-            aux = pivot;// aux1 sera igual a first  
+        SimpleNode aux;//declaramos dos variables auxiliares tipo nodeDL para guardar los valores de nuestros nodos
+        aux = pivot;// aux1 sera igual a first  
         if (isEmpty()) {//Preguntamos si la lista esta llenanodeClass aux;//declaramos dos variables auxiliares tipo nodeDL para guardar los valores de nuestros nodos
             System.out.println("La lista está vacia");
 
         } else {
-            
+
             do {
                 System.out.print("[" + aux.getData() + "]" + "->");
                 aux = aux.next;
@@ -82,17 +79,16 @@ SimpleNode aux;//declaramos dos variables auxiliares tipo nodeDL para guardar lo
 
     }
 
-   
-    public void eNode(T data){
+    public void eNode(T data) {
         SimpleNode aux;
         aux = pivot;
-        while(aux.next != pivot && aux.data != data){
+        while (aux.next != pivot && aux.data != data) {
             aux = aux.next;
         }
-        if(aux.next ==  pivot){
+        if (aux.next == pivot) {
             System.out.println("No se encuentra el nodo");
         }
-        if(aux.data == data){
+        if (aux.data == data) {
             aux.next = aux.next.next;
         }
     }

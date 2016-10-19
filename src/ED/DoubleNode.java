@@ -18,4 +18,27 @@ public class DoubleNode<T> {
     public DoubleNode(T data) {
         this.data = data;
     }
+    public void setData(T d){
+        this.data = d;
+    }
+    public T getData(){
+        return this.data;
+    }
+
+    public DoubleNode getNext() {
+        return next;
+    }
+
+    public DoubleNode getPrev() {
+        return prev;
+    }
+
+    public void setNext(DoubleNode next) {
+        this.next = next;
+    }
+
+    public void setPrev(DoubleNode prev) {
+        this.prev = prev;
+    }
+    
 }
