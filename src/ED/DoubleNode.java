@@ -6,21 +6,19 @@
 package ED;
 
 /**
- *
+ *Clase genérica
  * @author Mariana Villegas
  */
 public class DoubleNode<T> {
 
-    DoubleNode next;
-    T data;
-    DoubleNode prev ;
-
+    DoubleNode next; //cuenta con variable next del tipo de la clase
+    T data; //cuenta con data de cualquier tipo
+    DoubleNode prev ; //cuenta con un anterior del tipo de la clase
+//Constructor
     public DoubleNode(T data) {
         this.data = data;
     }
-    public void setData(T d){
-        this.data = d;
-    }
+  //Getters
     public T getData(){
         return this.data;
     }
@@ -32,7 +30,10 @@ public class DoubleNode<T> {
     public DoubleNode getPrev() {
         return prev;
     }
-
+    //Setters
+  public void setData(T d){
+        this.data = d;
+    }
     public void setNext(DoubleNode next) {
         this.next = next;
     }
