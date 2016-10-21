@@ -12,7 +12,7 @@ package ED;
 public class CircularList<T> {
 
     SimpleNode pivot;
-
+//Constructor
     public CircularList() {
         pivot = null;
     }
