@@ -28,25 +28,29 @@ public class Stack <T> {
     }
 
     /*
- 
+ *Método que devuelve el tamñano de la pila
      */
     public int getSize() {
         return size;
     }
-
+/*
+*Método para ver si esta vacia la pila
+*/
     public boolean isEmpty() {
         return top == null;
     }
-
+/**
+*Método para insertar datos en la pila, recibe como parametro data
+*/
     public  void push(T data) {
         SimpleNode node = new SimpleNode(data);
         if (isEmpty()) {//si la pila esta vacia
             top = node;
-        } else {
-            node.setNext(top);
-            top = node;
+        } else {//sino
+            node.setNext(top);// Apunta al valor de arriba
+            top = node;//le damos el valor del nodo a agregar.
         }
-        ++size;
+        ++size;//Aumentamos el tamaño de la pila
     }
 
     /**
@@ -54,9 +58,9 @@ public class Stack <T> {
      * Elimina un elemento de la pila
      */
     public void pop() {
-        if (!isEmpty()) {
-            top = top.getNext();
-            --size;
+        if (!isEmpty()) {//Preguntamos si NO esta vacia, si es asi:
+            top = top.getNext(); //top se va a recorrer y desaparece el nodo anterior
+            --size;//disminuimos el tamñao de la pila
         } else {
             System.out.println("La pila esta vacía");
         }
@@ -70,7 +74,9 @@ public class Stack <T> {
         top = null;
         size = 0;
     }
-
+/**
+*Método para mostrar los elementos de la pila
+*/
     public void showStack() {
         if (!isEmpty()) {
             SimpleNode aux = top;
